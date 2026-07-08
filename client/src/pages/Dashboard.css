@@ -1,0 +1,443 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #071224, #102542);
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu button,
+.logout-btn {
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 40px;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+}
+
+.featured-card {
+  background: linear-gradient(90deg, #06182f, #0f5132);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.stocks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stock-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.active-btn {
+  background: #22c55e;
+  color: white;
+  font-weight: bold;
+}
+
+.menu button {
+  background: #16263c;
+  color: white;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.portfolio-card {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: white;
+  width: 500px;
+  padding: 35px;
+  border-radius: 20px;
+}
+
+.modal-box input {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.modal-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.stocks-market-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stock-market-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.stock-market-card button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buy-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.buy-modal-content {
+  background: white;
+  width: 450px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  animation: popup 0.25s ease;
+}
+
+.buy-modal-content h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.buy-modal-content input {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.buy-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.confirm-btn {
+  flex: 1;
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  flex: 1;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.portfolio-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.portfolio-modal-content {
+  background: #f8f9fc;
+  width: 700px;
+  max-width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 35px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-modal-content h2 {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.portfolio-balance {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 30px;
+}
+
+.portfolio-actions-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.portfolio-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portfolio-stock-card {
+  background: white;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-stock-card h4 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.portfolio-stock-card p {
+  margin: 8px 0;
+  font-size: 20px;
+  color: #475569;
+}
+
+.sell-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: #ef4444;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sell-btn:hover {
+  background: #dc2626;
+}
+
+.close-portfolio-btn {
+  margin-top: 30px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: #0f172a;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* =====================================================
+   SELL VIEW
+===================================================== */
+
+.sell-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sell-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,.12);
+}
+
+.sell-card h2{
+  margin:0;
+  color:#0f172a;
+  font-size:28px;
+}
+
+.sell-card p{
+  margin:0;
+  color:#475569;
+  font-size:17px;
+}
+
+.sell-card strong{
+  color:#111827;
+}
+
+.sell-card button{
+  margin-top:18px;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  cursor:pointer;
+  background:#ef4444;
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  transition:.25s;
+}
+
+.sell-card button:hover{
+  background:#dc2626;
+}
+
+.profit{
+  color:#16a34a;
+  font-weight:bold;
+}
+
+.loss{
+  color:#dc2626;
+  font-weight:bold;
+}
+
+.search-stock{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:25px 0;
+
+}
+
+.search-stock input{
+
+    flex:1;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #CBD5E1;
+
+    font-size:17px;
+
+}
+
+.search-stock button{
+
+    width:160px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.search-stock button:hover{
+
+    background:#1D4ED8;
+
+}
