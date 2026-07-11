@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8205";
+url= "http://localhost:8205";
 
 export const buyStock = async (buyData) => {
     const token = localStorage.getItem("token");
