@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8205";
+const API_URL = "/api/v1";
 
 export const getStocks = async () => {
     const response = await axios.get(`${API}/stocks`);

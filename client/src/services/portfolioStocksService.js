@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8205";
+const API_URL = "/api/v1";
 
 export const getPortfolioStocks = async (portfolioId) => {
   const token = localStorage.getItem("token");
