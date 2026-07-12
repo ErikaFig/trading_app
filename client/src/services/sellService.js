@@ -3,7 +3,7 @@ import axios from "axios";
 const API_URL = "/api/v1";
 
 export const getSellStocks = async () => {
-  const response = await axios.get(`${API}/sell`, {
+  const response = await axios.get(`${API_URL}/sell`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`
     }
@@ -14,7 +14,7 @@ export const getSellStocks = async () => {
 
 export const sellStock = async (data) => {
   const response = await axios.post(
-    `${API}/sell`,
+    `${API_URL}/sell`,
     data,
     {
       headers: {

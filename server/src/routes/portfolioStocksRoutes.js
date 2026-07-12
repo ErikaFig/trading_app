@@ -6,6 +6,6 @@ const {
   getPortfolioStocks
 } = require("../controllers/portfolioStocksController");
 
-router.get("/:id", verifyToken, getPortfolioStocks);
+router.get("/:id/stocks", verifyToken, getPortfolioStocks);
 
 module.exports = router;

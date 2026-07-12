@@ -13,11 +13,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/portfolio", portfolioRoutes);
 app.use("/api/v1/stocks", stockRoutes);
 app.use("/api/v1/buy", buyRoutes);
 app.use("/api/v1/sell", sellRoutes);
-app.use("/api/v1/portfolio", portfolioRoutes);
-app.use("/api/v1/portfolio-stocks", portfolioStocksRoutes);
+app.use("/api/v1/portfolio", portfolioStocksRoutes);
 
 app.get('/', (req, res) => {
     res.json({

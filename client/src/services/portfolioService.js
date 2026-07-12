@@ -5,7 +5,7 @@ const API_URL = "/api/v1";
 export const getPortfolios = async () => {
   const token = localStorage.getItem("token");
 
-  const response = await axios.get(`${API}/portfolio`, {
+  const response = await axios.get(`${API_URL}/portfolio`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -18,7 +18,7 @@ export const createPortfolio = async (portfolioData) => {
   const token = localStorage.getItem("token");
 
   const response = await axios.post(
-    `${API}/portfolio`,
+    `${API_URL}/portfolio`,
     portfolioData,
     {
       headers: {
