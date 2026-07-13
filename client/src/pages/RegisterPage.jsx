@@ -105,9 +105,11 @@ function RegisterPage() {
             onChange={handleChange}
           />
 
-          <div onClick={handleRegister}>
-            <Button text="Registrarse" />
-          </div>
+	<Button
+    	   text="Registrarse"
+    	   onClick={handleRegister}	
+	/>		
+      
 
           <p style={{ marginTop: "20px" }}>
             ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>

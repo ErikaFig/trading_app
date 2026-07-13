@@ -67,9 +67,10 @@ function LoginPage() {
             onChange={handleChange}
           />
 
-          <div onClick={handleLogin}>
-            <Button text="Iniciar sesión" />
-          </div>
+          <Button 
+	    text="Iniciar Sesión"
+	    onClick={handleLogin}
+	  />
 
           <p style={{ marginTop: "20px" }}>
             ¿No tienes cuenta? <Link to="/register">Regístrate</Link>

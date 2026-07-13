@@ -441,3 +441,318 @@
     background:#1D4ED8;
 
 }
+
+/* =====================================================
+   TABLETS
+===================================================== */
+
+@media (max-width: 1024px){
+
+.dashboard-main{
+    padding:25px;
+}
+
+.sidebar{
+    width:210px;
+    padding:20px;
+}
+
+.stocks-market-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.portfolio-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.stocks-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.featured-card{
+    padding:25px;
+}
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:768px){
+
+.dashboard-layout{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+    padding:20px;
+
+}
+
+.menu{
+
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.menu button{
+
+    flex:1 1 45%;
+
+}
+
+.logout-btn{
+
+    width:100%;
+
+}
+
+.dashboard-main{
+
+    padding:18px;
+
+}
+
+.dashboard-header h1{
+
+    font-size:30px;
+
+}
+
+.featured-card{
+
+    padding:20px;
+
+}
+
+.featured-card h2{
+
+    font-size:28px;
+
+}
+
+.stocks-market-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.portfolio-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.stocks-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.stock-market-card,
+.portfolio-card,
+.sell-card{
+
+    padding:20px;
+
+}
+
+}
+
+
+/* =====================================================
+   MODALS
+===================================================== */
+
+@media (max-width:768px){
+
+.buy-modal-content,
+.modal-box,
+.portfolio-modal-content{
+
+    width:95%;
+    padding:22px;
+
+}
+
+.buy-buttons,
+.modal-buttons{
+
+    flex-direction:column;
+
+}
+
+.confirm-btn,
+.cancel-btn{
+
+    width:100%;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.portfolio-modal-content h2{
+
+    font-size:28px;
+
+}
+
+.portfolio-balance{
+
+    font-size:22px;
+
+}
+
+.portfolio-actions-title{
+
+    font-size:22px;
+
+}
+
+.portfolio-stock-card h4{
+
+    font-size:24px;
+
+}
+
+.portfolio-stock-card p{
+
+    font-size:16px;
+
+}
+
+}
+
+
+@media (max-width:768px){
+
+.search-stock{
+
+    flex-direction:column;
+
+}
+
+.search-stock button{
+
+    width:100%;
+
+}
+
+}
+
+
+/*====================================================
+        MOBILE SIDEBAR
+====================================================*/
+
+.menu-toggle{
+
+    display:none;
+
+}
+
+.sidebar-overlay{
+
+    display:none;
+
+}
+
+@media (max-width:768px){
+
+.menu-toggle{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#071224;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:1201;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.30);
+
+}
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:260px;
+
+    height:100vh;
+
+    z-index:1200;
+
+    transform:translateX(-100%);
+
+    transition:transform .35s ease;
+
+    box-shadow:10px 0 35px rgba(0,0,0,.35);
+
+}
+
+.sidebar.sidebar-open{
+
+    transform:translateX(0);
+
+}
+
+.sidebar-overlay{
+
+    display:block;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    z-index:1100;
+
+}
+
+.dashboard-main{
+
+    width:100%;
+
+    padding:80px 20px 20px;
+
+}
+
+}
