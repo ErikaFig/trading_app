@@ -20,8 +20,8 @@ const sellStock = async (req, res) => {
       `
       SELECT *
       FROM portafolio_acciones
-      WHERE id_portafolio=$1
-      AND simbolo=$2
+      WHERE id_portafolio = $1
+      AND simbolo = $2
       `,
       [id_portafolio, simbolo]
     );
@@ -39,8 +39,8 @@ const sellStock = async (req, res) => {
     const ingresoVenta = cantidad * precio_venta;
 
     const ganancia =
-      (precio_venta - Number(stock.precio_promedio_compra))
-      * cantidad;
+      (Number(precio_venta) - Number(stock.precio_promedio_compra)) *
+      Number(cantidad);
 
     // Registrar venta
     await client.query(
@@ -54,7 +54,7 @@ const sellStock = async (req, res) => {
         ganancia_perdida,
         simbolo
       )
-      VALUES($1,$2,$3,$4,$5,$6)
+      VALUES ($1,$2,$3,$4,$5,$6)
       `,
       [
         id_usuario,
@@ -73,7 +73,7 @@ const sellStock = async (req, res) => {
       await client.query(
         `
         DELETE FROM portafolio_acciones
-        WHERE id=$1
+        WHERE id = $1
         `,
         [stock.id]
       );
@@ -87,9 +87,9 @@ const sellStock = async (req, res) => {
         `
         UPDATE portafolio_acciones
         SET
-          cantidad=$1,
-          inversion_total=$2
-        WHERE id=$3
+            cantidad = $1,
+            inversion_total = $2
+        WHERE id = $3
         `,
         [
           nuevaCantidad,
@@ -100,16 +100,18 @@ const sellStock = async (req, res) => {
 
     }
 
-    // Regresar dinero al balance
-
+    // Actualizar balance y ganancia acumulada del portafolio
     await client.query(
       `
       UPDATE portafolios
-      SET balance = balance + $1
-      WHERE id_portafolio=$2
+      SET
+          balance = balance + $1,
+          ganancia_total = ganancia_total + $2
+      WHERE id_portafolio = $3
       `,
       [
         ingresoVenta,
+        ganancia,
         id_portafolio
       ]
     );
@@ -125,6 +127,8 @@ const sellStock = async (req, res) => {
 
     await client.query("ROLLBACK");
 
+    console.error(error);
+
     res.status(400).json({
       message: error.message
     });
@@ -137,6 +141,7 @@ const sellStock = async (req, res) => {
 };
 
 const getUserStocks = async (req, res) => {
+
   try {
 
     const id_usuario = req.user.id_usuario;
@@ -166,15 +171,17 @@ const getUserStocks = async (req, res) => {
 
   } catch (error) {
 
+    console.error(error);
+
     res.status(500).json({
       message: error.message
     });
 
   }
+
 };
 
 module.exports = {
   sellStock,
   getUserStocks
 };
-
